@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="music.css">
+		<title>Music</title>
+	</head>
+	<body>
+		<div id="big">
+			<div id="header">
+				<ul>
+					<li id="li_1" class="selected" ">古典乐</li>
+					<li id="li_2" class="normal" ">梵呗</li>
+					<li id="li_3" class="normal" ">小语种</li>
+					<li id="li_4" class="normal" ">小清新</li>
+					<li id="li_5" class="normal" ">联系我们</li>
+				</ul>
+			</div>
+			<div id="left">
+				<div class="title">80000</div>
+				<div class="bofang">
+					<img class="key" id="key" src="key.png" onclick="zhuan()" />
+					<img id="changpian" src="changpian.png" />
+				</div>
+				<div class="Irc">
+					<div id="content"></div>
+				</div>
+				<audio src="彦 - 80000（Cover PRC 巴音汗）.mp3" id="myMusic" autoplay loop="true"></audio>
+				<textarea id="text" style="display:none; cursor: pointer;">
+					[00:00.64]80000 - 巴音汗
+					[00:02.15]词：巴音汗
+					[00:03.70]曲：巴音汗
+					[00:04.14]编曲：巴音汗
+					[00:20.57]嗯~~有句话我经常对你讲
+					[00:25.23]你是我想含在嘴里的一块糖
+					[00:27.73]铁石心肠最后抵不过你的倔强
+					[00:29.92]像个孩子总想钻进你的胸膛
+					[00:32.12]很多次走在凌晨三点半的大街
+					[00:34.09]也曾为了找到紫霞仙子踏破铁鞋
+					[00:37.70]oh baby baby oh baby baby 我发誓我会努力
+					[00:40.30]oh baby baby oh baby baby 我发誓我会走起
+					[00:42.36]我希望你能陪我走过白天和黑夜
+					[00:45.12]也希望能抱着你回味美梦一整夜
+					[00:48.55]你懂我想要的每一个体位
+					[00:50.44]今晚陪我大家都别想入睡
+					[00:53.69]我想要看你身上一丝不挂的模样
+					[00:55.67]在你身体上留下属于我的记号
+					[00:58.79]我想要看你在我身上自由飞翔
+					[01:01.28]从大到小的过程记录在你的嘴角
+					[01:03.60]我带你走过春夏秋冬不想太普通
+					[01:06.96]你知道我想爱你所以是我主动
+					[01:09.98]我见到你第一眼就知道你是我的菜
+					[01:12.63]爱~~~
+					[01:14.68]嗯~~想你想你想我
+					[01:17.28]嗯~~想你想你想我
+					[01:20.44]嗯~~
+					[01:25.55]嗯~~想你想你想我
+					[01:28.22]嗯~~想你想你想我
+					[01:31.72]嗯~~
+				</textarea>
+			</div>
+
+			<div id="right">
+				
+				
+			</div>
+		</div>
+			
+	</body>
+	<script>
+		var oPlay = document.getElementsByClassName("key")[0];
+		var myMusic = document.getElementById("myMusic");
+		var oText = document.getElementById("text");
+		var oCon = document.getElementById("content");
+		var time1;
+		var mark = true;
+		var rot = 10 - 0;
+		window.onload = function(argument) {
+			//进入页面800毫秒后开始播放音乐并清除定时器
+			var time = setInterval(function(){
+				openMusic();
+				clearTimeout(time)
+			},800)
+			//音乐点击按钮事件
+			oPlay.onclick = function () {
+				openMusic()
+			}
+		}
+		
+		function openMusic(){
+			if(mark) {
+				myMusic.play();
+				mark = false;
+				document.getElementById("key").style.transform = "rotatez(10deg)";
+				time1 = window.setInterval(begin, 10);
+			} else {
+				myMusic.pause(); //暂停播放
+				mark = true;
+				document.getElementById("key").style.transform = "rotatez(-30deg)";
+				window.clearInterval(time1);
+			}
+		}
+
+		function begin(time) {
+			document.getElementById("changpian").style.transform = "rotatez(" + rot + "deg)";
+			rot += 1;
+		}
+		//歌词同步
+		var html = '';
+		var text = oText.value.split("[");
+		//console.log(text)
+		for(var i = 0; i < text.length; i++) {
+			//console.log(text[i])
+			var Irc = text[i].split("]");
+			var time = Irc[0].split(".");
+			var times = time[0].split(":");
+			//console.log(times)
+			var ms = times[0] * 60 + times[1] * 1;
+			//console.log(ms)
+			if(Irc[1])
+				html += "<p id=" + ms + ">" + Irc[1] + "</p>";
+		}
+		//console.log(html)
+		oCon.innerHTML = html;
+		var aP = document.getElementsByTagName("p");
+		var num = 0;
+		myMusic.addEventListener("timeupdate", function() {
+			//console.log(parseInt(this.currentTime))
+			console.log(this.currentTime);
+			var curT = parseInt(this.currentTime);
+			if(document.getElementById(curT)) {
+				for(var i = 0; i < aP.length; i++) {
+					aP[i].style.color = "#ccc";
+					aP[i].style.fontSize = "14px";
+				}
+				document.getElementById(curT).style.color = "#30fb15";
+				document.getElementById(curT).style.fontSize = "18px";
+				if(aP[5 + num].id == curT) {
+					oCon.style.top = -20 * num + "px";
+					num++;
+				}
+
+			}
+		})
+	</script>
+
+</html>

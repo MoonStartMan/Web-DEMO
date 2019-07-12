@@ -1,0 +1,23 @@
+1.A
+2.C
+3.D
+4.B
+5.C
+6.C
+7.C
+8.A
+9.A
+10.D
+11.B
+12.C
+13.C
+14.B
+15.A
+
+1.∏°µ„–Õ
+2.onload ready
+3.body
+4.aa.length;
+5." " ' '
+6.window alert
+7.$("#b1").text();

@@ -1,0 +1,275 @@
+*{
+  margin: 0;
+  padding:0;
+}
+#big{
+  width:800px;
+  height:560px;
+  margin:0 auto;
+  background:url(book.png);
+  background-size:cover;
+  margin-top:40px;
+}
+#left{
+  width:330px;
+  height:435px;
+  float:left;
+  margin-left:55px;
+  position:relative;
+  overflow: hidden;
+}
+#right{
+  position:relative;
+   width:330px;
+  height:435px;
+  left:40px;
+  overflow:hidden;
+}
+#right1{
+  position:absolute;
+  width:330px;
+  height:435px;
+  z-index:1000;
+  overflow:hidden;
+}
+#right1 #card{
+  list-style:none;
+  width:330px;
+  height:80px;
+  float:left;
+  margin-top:20px;
+}
+#right1 li{
+  float:left;
+  margin-left:20px;
+}
+#right1 img{
+  width:60px;
+  height:100px;
+}
+#right1 div.contentin{
+	display:block;
+}
+#right2{
+  position:absolute;
+  width:330px;
+  height:435px;
+  z-index:999;
+  overflow: hidden;
+  display:none;
+}
+.text2{
+  width:330px;
+  height:250px;
+  position: relative;
+  top:5px;
+  font-size: 13px;
+  color:#444;
+}
+#right3{
+  position:absolute;
+   width:330px;
+  height:435px;
+  z-index:888;
+  overflow: hidden;
+  display:none;
+}
+#right3 ul{
+  float:left;
+  margin-top:50px;
+   
+}
+#right3 li{
+  list-style:none;
+  float:left;
+  margin-left:20px;
+  text-align:center;
+  line-height:2;
+  width:85px;
+  height:120px;
+ 
+}
+#right3 a{
+   text-decoration:none;
+   color:black;
+}
+#right4{
+  position:absolute;
+   width:330px;
+  height:435px;
+  z-index:777;
+  overflow: hidden;
+  display:none;
+}
+#right4 video{
+  width:100%;
+  
+}
+#right5{
+  position:absolute;
+   width:330px;
+  height:435px;
+  z-index:666;
+  overflow: hidden;
+  display:none;
+}
+#right5 .cu{
+  text-align: center;
+  font-size: 25px;
+  line-height: 40px;
+}
+#right5 .kefu,#right5 .tel{
+  margin:0 20px;
+  font-size: 20px;
+}
+
+#right5 .sug{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom:10px;
+}
+#right5 .tt1{
+  margin-top:10px;
+}
+#right5 textarea{
+  margin-top:10px;
+}
+#right5 button{
+  margin-left:250px;
+}
+#right5 input{
+  height:26px;
+  border:2px solid;
+  border-radius: 5px;
+}
+.weixin,.QQ{
+  width:100px;
+  padding-left:30px;
+}
+
+#header{
+  width:530px;
+  height:70px;
+  background:green;
+  float:left;
+  margin-left:160px;
+  margin-top:10px;
+  background:url(header.png) no-repeat;
+  background-size:100% auto;
+}
+#header ul{
+  float:left;
+  margin-left:58px;
+}
+#header ul li{
+  list-style:none;
+  float:left;
+  margin-left:28px;
+  margin-top:15px;
+  cursor: pointer;
+}
+#header li:hover{
+  color:brown;
+}
+.bofang{
+  position: relative;
+  width:200px;
+  height:200px;
+  top:-20px;
+  margin-left:70px;
+}
+.key{
+  width:65px;
+  position:absolute;
+  top:50px;
+  transform:rotate(-30deg);
+  transform-origin:100% 0 0;
+  left:150px;
+  z-index:2;
+}
+#changpian{
+  position: absolute;
+  width:150px;
+  left:20px;
+  top:80px;
+  z-index:1;
+}
+.title{
+	width:320px;
+	height:40px;
+	color:#fff;
+  background: black;
+  position: absolute;
+  top:2px;
+	text-align:center;
+	font-size:25px;
+	font-weight:bold;
+	}
+.Irc{
+	width:300px;
+	height:220px;	
+	margin: 10px auto;
+	color:#ccc;
+	text-align:center;
+	overflow:hidden;
+	font-size:14px;
+	line-height:20px;
+	}
+#content{
+	position:relative;
+	top:0;
+	}
+.text{
+    width: 300px;
+    height: 286px;
+    color: #444;
+    font-size: 13px;
+}
+.squre{
+  margin-left:20px;
+  margin-top:20px;
+  position:absolute;
+  top:120px;
+}
+#datu{
+  width:300px;
+  height:200px;
+  top:20px;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+}
+#tu{
+  
+}
+.bg{
+  background: yellow;
+}
+#c_1,#c_2,#c_3,#c_4{
+	position: relative;
+}
+#c_1:hover .m,#c_2:hover .m,#c_3:hover .m,#c_4:hover .m{
+  -webkit-transform:rotate(360deg)scale(1,1);
+  -safair-transform:rotate(360deg)scale(1,1);
+  -ms-transform:rotate(360deg)scale(1,1);
+  -o-transform:rotate(360deg)scale(1,1);
+  transition:1s}
+.m{
+  font-size: 18px;
+  width:60px;
+  height:100px;
+  background:rgba(248,55,187,0.5);
+  position:absolute;
+  transform:rotate(0deg)scale(0,0);
+  transition:1s;
+  writing-mode: tb-rl;
+	color: white;
+	text-align: center;
+	line-height: 60px;
+}
+
+
+
+.onCodeSlide{width: 330px;height: 180px;overflow: hidden;}
+.t1  li{ list-style: none;width: 330px;height:180px; float: left;}
+

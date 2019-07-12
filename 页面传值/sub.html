@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面传值</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 400px;
+        height: 100px;
+        background-color: #000000;
+        color: #ffffff;
+        margin: 100px auto;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+    span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        前一个页面你输入的数字为: <span></span>
+    </div>
+</body>
+<script>
+    var url = window.location.search;
+    var id = url.substring(4);
+    var span = document.getElementsByTagName("span")[0];
+    span.innerHTML = id;
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>时间戳转化</title>
+</head>
+
+<body>
+    <input type="text" placeholder="输入时间戳" value="1542198884" class="text">
+    <button>转化</button>
+    <span class="time"></span>
+</body>
+<script>
+    function transformTime(timestamp = +new Date()) {
+        if (timestamp) {
+            var time = new Date(parseInt(timestamp * 1000));
+            var y = time.getFullYear(); //getFullYear方法以四位数字返回年份
+            var M = time.getMonth() + 1; // getMonth方法从 Date 对象返回月份 (0 ~ 11)，返回结果需要手动加一
+            var d = time.getDate(); // getDate方法从 Date 对象返回一个月中的某一天 (1 ~ 31)
+            var h = time.getHours(); // getHours方法返回 Date 对象的小时 (0 ~ 23)
+            var m = time.getMinutes(); // getMinutes方法返回 Date 对象的分钟 (0 ~ 59)
+            var s = time.getSeconds(); // getSeconds方法返回 Date 对象的秒数 (0 ~ 59)
+            return y + '-' + M + '-' + d + ' ' + h + ':' + m + ':' + s;
+        } else {
+            return '';
+        }
+    }
+    document.getElementsByTagName("button")[0].onclick = function () {
+        var span = document.getElementsByTagName("span")[0];
+        var timeValue = document.getElementsByClassName("text")[0].value;
+        var nowTime = transformTime(timeValue);
+        span.innerHTML = nowTime;
+    }
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS操作URL</title>
+</head>
+<body>
+    <script>
+        var url = window.location.search;
+        if(!url) {
+            window.history.pushState({},0,"?id=41&task=直列四缸发动机缸体设计&student=蒲勇君");
+        }
+        var newUrl = decodeURI(window.location.search);
+        var idIndex = newUrl.indexOf('?id=');
+        var taskIndex = newUrl.indexOf('&task=');
+        var studentIndex = newUrl.indexOf('&student=');
+        var length = newUrl.length;
+        var id = newUrl.substring(4,parseInt(taskIndex));
+        var task = newUrl.substring((parseInt(taskIndex)+6),studentIndex);
+        var student = newUrl.substring((parseInt(studentIndex)+9),length);
+        console.log(id);
+        console.log(task);
+        console.log(student);
+    </script>
+</body>
+</html>
