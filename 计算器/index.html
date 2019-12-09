@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算器</title>
+    <style>
+    body{
+        margin: 0;
+    }
+    .input-box{
+        width: 600px;
+        height: 300px;
+        border: 2px solid #000000;
+        margin: 100px auto;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="input-box">
+        <input type="text" placeholder="请输入数字1" id="num1">
+        <input type="text" placeholder="请输入数字2" id="num2">
+        <div class="select-box">
+            <button type="button" value="+">+</button>
+            <button type="button" value="-">-</button>
+            <button type="button" value="*">*</button>
+            <button type="button" value="/">/</button>
+        </div>
+        <input type="button" placeholder="结果" value="结果" id="result-btn">
+    </div>
+</body>
+
+<script>
+    function checkValue(obj) {
+        obj = {
+            num1: 0,
+            num2: 0
+        }
+        var num1 = document.getElementById("num1").value;
+        var num2 = document.getElementById("num2").value;
+        var reg = /^[0-9]*$/;
+
+        if(!num1||!num2) {
+            alert("输入不得为空!");
+            return;
+        } else if(!reg.test(num1)&&!reg.test(num2)) {
+            alert("请输入数字");
+            return;
+        } else {
+            obj.num1 = num1;
+            obj.num2 = num2;
+        }
+
+        return obj;
+    }
+
+    var btns = document.getElementsByTagName("button");
+    var result = document.getElementById("result-btn");
+        for(let i=0, len=btns.length; i<len; i++) {
+            btns[i].onclick = function(e) {
+                var nums = checkValue();
+                e.preventDefault();
+                switch(btns[i].value) {
+                    case '+' : result.value = parseInt(nums.num1) + parseInt(nums.num2) ; break;
+                    case '-' : result.value = parseInt(nums.num1) - parseInt(nums.num2) ; break;
+                    case '*' : result.value = parseInt(nums.num1) * parseInt(nums.num2) ; break;
+                    case '/' : result.value = parseInt(nums.num1) / parseInt(nums.num2) ; break;
+                    default: return;
+                }
+            }
+        };
+</script>
+</html>
