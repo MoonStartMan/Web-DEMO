@@ -1,0 +1,46 @@
+html{
+    font-size: 16px;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+}
+
+.cover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.next-btn{
+    width: 9.375rem;
+    height: 3.125rem;
+    border-radius: 6.25rem;
+    border: .0625rem solid #ffffff;
+    position: absolute;
+    bottom: 6.25rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.next-btn a{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    line-height: 3.125rem;
+    font-size: .875rem;
+    text-align: center;
+}
