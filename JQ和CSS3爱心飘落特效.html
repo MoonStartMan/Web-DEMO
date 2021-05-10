@@ -1,0 +1,46 @@
+﻿<style>
+    /*#wrap{
+                相对定位,限制绝对定位
+                position: relative;
+                width: 300px;
+                height: 300px;
+                background-color: green;
+                margin: 50px auto;
+            }*/
+    body {
+        overflow: hidden;
+        margin: 0 auto;
+        background-image: url(img/84128-106.jpg);
+    }
+
+    .snowfall-flakes:before {
+        content: "";
+        /*绝对定位*/
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 10px;
+        height: 16px;
+        transform: rotate(-45deg);
+        background-color: red;
+        border-radius: 5px 5px 1px 1px;
+    }
+
+    .snowfall-flakes:after {
+        content: ""; /*激活伪元素的必要因素*/
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 10px;
+        height: 16px;
+        transform: translateX(4.3px) rotate(45deg);
+        background-color: red;
+        border-radius: 5px 5px 1px 1px;
+    }
+</style>
+<div class="wrap"></div>
+<script type="text/javascript" src="http://cdn.bootstrapmb.com/jquery/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.bootcss.com/JQuery-Snowfall/1.7.4/snowfall.jquery.min.js"></script>
+<script>
+    $(document).snowfall({ flakeCount: 100, maxSpeed: 5 });
+</script>
