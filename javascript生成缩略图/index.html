@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript生成缩略图</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">javascript生成缩略图</div>
+        <div class="load-file-box">
+            <!-- 上传图片container -->
+            <a href="javascript:;" class="file">
+                选择需要生成缩略图的文件
+                <input type="file" id="file" multiple/>
+            </a>
+
+            <div class="image-show-box"></div>
+            <!-- 选择缩略图大小 -->
+            <div class="control-box">
+                <div class="title">点击设置缩略图尺寸大小</div>
+                <div class="control-list-box">
+                    <div class="control-list">50*50</div>
+                    <div class="control-list">100*100</div>
+                    <div class="control-list">125*125</div>
+                    <div class="control-list">150*150</div>
+                    <div class="control-list">175*175</div>
+                    <div class="control-list">200*200</div>
+                </div>
+            </div>
+            <div class="show-control-size-box">
+                当前缩略图的大小宽度为 <a class="bingo-text"></a> 高度为 <a class="bingo-text"></a>
+            </div>
+
+            <!-- 生成缩略图 -->
+            <input type="submit" value="点击生成缩略图" id="createBtn" />
+            <div class="breviary-box"></div>
+
+            <div class="download-box">
+                <input type="submit" value="点击下载" id="download-btn">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./js/jQuery.js"></script>
+<script src="./js/autoSize.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
